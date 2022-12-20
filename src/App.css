@@ -36,3 +36,42 @@
     transform: rotate(360deg);
   }
 }
+
+body {
+  color: black;
+}
+
+h2 {
+  color: navy;
+}
+
+.stocks-about {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  justify-content: space-evenly;
+}
+
+a {
+  color: black;
+}
+
+
+section {
+  width: 100vw;
+  margin: 0 auto;
+}
+
+nav {
+  background-color: blue;
+  padding: 10px;
+}
+
+nav a {
+  color: white;
+}
+
+
+nav h1 {
+  font-size: 45px;
+}
