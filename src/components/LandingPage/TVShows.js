@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import Data from '../data';
+import Data from "../../data"
 
 export default function TVShows() {
 
@@ -29,8 +29,9 @@ export default function TVShows() {
       <div>
         <h2>{tvshow.title}</h2>
         <h2>{tvshow.review}</h2>
-        <img src={tvshow.image} />
-        <h3>{tvshow.positive}</h3>
+        {/* <h2>{tvshow.categories}</h2> */}
+        <img src={tvshow.posterURL} />
+        {/* <h3>{tvshow.positive}</h3> */}
       </div>
     )
   }

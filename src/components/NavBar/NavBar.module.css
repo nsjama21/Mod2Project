@@ -1,0 +1,38 @@
+.NavBar body {
+  color: black;
+}
+
+.NavBar h3 {
+  color: navy;
+}
+
+.NavBar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  justify-content: space-evenly;
+}
+
+.NavBar a {
+  color: black;
+}
+
+
+.NavBar section {
+  width: 100vw;
+  margin: 0 auto;
+}
+
+.NavBar nav {
+  background-color: blue;
+  padding: 10px;
+}
+
+.NavBar nav a {
+  color: white;
+}
+
+
+.NavBar nav h1 {
+  font-size: 45px;
+}
