@@ -1,11 +1,19 @@
-import styles from './ReviewList.module.css';
+import Data from "../../data"
+import ReviewListItem from "./ReviewListItem"
+import { Link } from "react-router-dom"
 
-export default function ReviewList({ listTVShows, handleAddToReviews }) {
+const reviews = Data.map((ele, index) => {
   return (
-    <div className={styles.ReviewList}>
-      {listTVShows.title}
-      <button className="btn-sm" onClick={() => handleAddToReviews(listTVShows._id)}>
-        ADD </button>
+    <Link to={`/tvshow/${index}`}>
+      <ReviewListItem key={index} {...ele} />
+    </Link>
+  )
+});
+
+export default function ReviewList(props) {
+  return (
+    <div>
+      <section className="lists">{reviews}</section>
     </div>
-  );
+  )
 }

@@ -1,10 +1,11 @@
 import { Link } from 'react-router-dom';
-import Data from "../data"
+import styles from "./Dashboard.module.css"
+import Data from "../../data"
 
 export default function Dashboard() {
   return (
     <section>
-      <h2>Most Polarizing TV Show Reviews Ever!</h2>
+      <h2>Most Positive TV Show Reviews Ever!</h2>
       {
         Data.map((tvshow) => {
           const { title, posterURL } = tvshow;
@@ -12,8 +13,7 @@ export default function Dashboard() {
           return (
             <Link key={title} to={`/tvshows/${title}`}>
               <h3>{title}</h3>
-              <img src={posterURL} />
-
+              <img className={styles.Dashboard} src={posterURL} width="500px" />
             </Link>
           );
         })
@@ -21,3 +21,4 @@ export default function Dashboard() {
     </section>
   )
 }
+

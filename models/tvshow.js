@@ -1,7 +1,15 @@
-const mongoose = require('mongoose');
-// Ensure the Category model is processed by Mongoose
-require('./category');
+const mongoose = require("mongoose")
 
-const tvshowSchema = require('./tvshowSchema');
+const Schema = mongoose.Schema
+const tvshowSchema = new Schema({
+  title: { type: String, required: true },
+  review: { type: String, required: true },
+  posterURL: { type: String, required: true }
 
-module.exports = mongoose.model('TV Show', tvshowSchema);
+},
+  {
+    timestamps: true
+
+  })
+
+module.exports = mongoose.model("TVShow", tvshowSchema)

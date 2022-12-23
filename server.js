@@ -3,9 +3,14 @@ const path = require('path');
 const favicon = require('serve-favicon');
 const logger = require('morgan');
 
+//Routes
+
+const tvshowRoutes = require("./routes/api/tvshows")
+
 // Always require and configure near the top
 require('dotenv').config()
 
+//// ===== Connection to Database =====
 require("./config/database");
 
 const app = express();
@@ -22,9 +27,11 @@ app.use(express.static(path.join(__dirname, "build")))
 // Put API routes here, before the "catch all" route
 // app.use('/api/users', require("./routes/api/users"))
 
+// ===== Routes =====
+app.use("/api/tvshows", tvshowRoutes)
 
-app.use('/api/tvshows', require('./routes/api/tvshows'));
-app.use('/api/reviews', require('./routes/api/reviews'));
+// app.use('/api/tvshows', require('./routes/api/tvshows'));
+// app.use('/api/reviews', require('./routes/api/reviews'));
 // The following "catch all" route (note the *) is necessary
 // to return the index.html on all non-AJAX requests
 app.get("/*", (req, res) => {
