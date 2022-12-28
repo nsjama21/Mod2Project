@@ -1,7 +1,6 @@
 const mongoose = require("mongoose")
 
-const Schema = mongoose.Schema
-const tvshowSchema = new Schema({
+const reviewSchema = new mongoose.Schema({
   title: { type: String, required: true },
   review: { type: String, required: true },
   posterURL: { type: String, required: true }
@@ -12,4 +11,6 @@ const tvshowSchema = new Schema({
 
   })
 
-module.exports = mongoose.model("TVShow", tvshowSchema)
+const Review = mongoose.model("Review", reviewSchema)
+
+module.exports = Review
